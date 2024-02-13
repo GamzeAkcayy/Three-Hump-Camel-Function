@@ -1,0 +1,41 @@
+[System]
+Name='GAFis'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='x1'
+Range=[-5 10]
+NumMFs=2
+MF1='A1':'gaussmf',[4 5]
+MF2='A2':'gaussmf',[3 2]
+
+[Input2]
+Name='x2'
+Range=[0 15]
+NumMFs=2
+MF1='B1':'gaussmf',[3 1]
+MF2='B2':'gaussmf',[1 1]
+
+[Output1]
+Name='output1'
+Range=[-9.25057821595518 165.163749370055]
+NumMFs=4
+MF1='f1':'constant',[3]
+MF2='f2':'constant',[5]
+MF3='f3':'constant',[1]
+MF4='f4':'constant',[5]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+2 1, 3 (1) : 1
+2 2, 4 (1) : 1
